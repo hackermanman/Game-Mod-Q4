@@ -1,0 +1,36 @@
+windowDef Desktop {
+    rect 0, 0, 640, 480
+    backcolor 0, 0, 0, 1
+    menugui 1
+
+    windowDef Title {
+        rect        0, 100, 640, 40
+        text        "PICK A KART"
+        textalign   1
+        forecolor   1, 1, 1, 1
+    }
+
+    windowDef Kart0 {
+        rect        220, 200, 200, 30
+        text        "TANK"
+        textalign   1
+        forecolor   1, 1, 1, 1
+        onAction    { set "cmd" "kartselect 0"; }
+    }
+
+    windowDef Kart1 {
+        rect        220, 250, 200, 30
+        text        "WALKER"
+        textalign   1
+        forecolor   1, 1, 1, 1
+        onAction    { set "cmd" "kartselect 1"; }
+    }
+
+    windowDef Kart2 {
+        rect        220, 300, 200, 30
+        text        "KART 3"
+        textalign   1
+        forecolor   1, 1, 1, 1
+        onAction    { set "cmd" "kartselect 2"; }
+    }
+}
