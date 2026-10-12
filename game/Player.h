@@ -343,6 +343,12 @@ public:
 	
 	idUserInterface *		objectiveSystem;
 	idUserInterface *		cinematicHud;
+
+	//ngc2 kart select 
+	idUserInterface* kartSelectGUI; // GUI for kart selection
+	bool kartSelectOpen;  // true if the kart select GUI is open
+	void SpawnKart(int kartIndex); // spawn the kart for the player
+
 	bool					objectiveSystemOpen;
 	bool					objectiveButtonReleased;
 	bool					disableHud;

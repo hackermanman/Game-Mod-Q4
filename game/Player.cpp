@@ -1118,6 +1118,10 @@ idPlayer::idPlayer() {
 	overlayHud				= NULL;
 	overlayHudTime			= 0;
 
+	//ngc2 kart select variables cfg
+	kartSelectGUI = NULL;
+	kartSelectOpen = false; 
+
 	lastDmgTime				= 0;
 	deathClearContentsTime	= 0;
 	nextHealthPulse			= 0;
@@ -1862,6 +1866,13 @@ void idPlayer::Spawn( void ) {
 
 		if ( hud ) {
 			hud->Activate( true, gameLocal.time );
+		}
+
+		// ngc2 kart select screen shows until a kart is picked
+		kartSelectGUI = uiManager->FindGui("guis/selectkart.gui", true, false, true);
+		if (kartSelectGUI) {
+			kartSelectGUI->Activate(true, gameLocal.time); 
+			kartSelectOpen = true; 
 		}
 
 		if ( mphud ) {
@@ -3645,6 +3656,12 @@ void idPlayer::DrawHUD( idUserInterface *_hud ) {
 	}
 
 	if ( disableHud || influenceActive != INFLUENCE_NONE || privateCameraView || !_hud || !g_showHud.GetBool() ) {
+		return;
+	}
+
+	//ngc2 kart select screen covers hud until kart picked
+	if (kartSelectOpen) {
+		kartSelectGUI->Redraw(gameLocal.time);
 		return;
 	}
 
@@ -8133,6 +8150,41 @@ bool idPlayer::ExitVehicle ( bool force ) {
 	return true;
 }
 
+/*
+==============
+idPlayer::SpawnKart  (ngc2)
+==============
+*/
+
+void idPlayer::SpawnKart(int kartIndex) {
+	//karts selection  - didnt realize there was only one usable vehicle (tank), and the walker is well.. a walker. 
+	// need to make custom cars.  . . ... 
+	static const char* kartDefs[] = { "vehicle_gev", "vehicle_gev", "vehicle_walker" };
+	
+	//close the kart screen 
+	kartSelectOpen = false; 
+	kartSelectGUI->Activate(false, gameLocal.time);
+
+	//spawn kart right where player is 
+	idDict kartInfo; 
+	//moved the kart up so it doesent get stuck in the ground. 
+	kartInfo.Set("classname", kartDefs[kartIndex]);
+	kartInfo.SetVector("origin", GetPhysics()->GetOrigin() + idVec3(0, 0, 50));
+	kartInfo.SetFloat("angle", viewAngles.yaw); 
+
+	idEntity* kart = NULL; 
+	gameLocal.SpawnEntityDef(kartInfo, &kart); 
+
+	//put the player in kart and STOP if doesent work 
+	if (!kart || !EnterVehicle(kart)) {
+		gameLocal.Warning("could not use '%s'", kartDefs[ kartIndex ]);
+		return;
+	}
+
+	//lock player in kart 
+	static_cast<rvVehicle*> (kart)->Lock(); 
+}
+
 
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus
@@ -8453,6 +8505,14 @@ void idPlayer::PerformImpulse( int impulse ) {
 		msg.BeginWriting();
 		msg.WriteBits( impulse, IMPULSE_NUMBER_OF_BITS );
 		ClientSendEvent( EVENT_IMPULSE, &msg );
+	}
+
+	//ngc2 kart select screen, clicking 1 2 or 3 selects the kart you want. 
+	if (kartSelectOpen) {
+		if (impulse >= IMPULSE_0 && impulse <= IMPULSE_2) {
+			SpawnKart(impulse - IMPULSE_0);
+			return; 
+		}
 	}
 
 	if ( impulse >= IMPULSE_0 && impulse <= IMPULSE_12 ) {
@@ -9420,6 +9480,9 @@ void idPlayer::Think( void ) {
 	if ( IsInVehicle ( ) ) {	
 		vehicleController.SetInput ( usercmd, viewAngles );
 				
+		// ngc2 make sure karts are always in third person. 
+		pm_thirdPerson.SetBool( true ); 
+
 		// calculate the exact bobbed view position, which is used to
 		// position the view weapon, among other things
 		CalculateFirstPersonView();
