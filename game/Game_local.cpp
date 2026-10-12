@@ -3472,6 +3472,11 @@ idGameLocal::RunFrame
 
 	player = GetLocalPlayer();
 
+	// auto skip cutscene in game ngc2
+	if ( inCinematic ) {
+		SkipCinematic(); 
+	}
+
 	if ( !isMultiplayer && g_stopTime.GetBool() ) {
 
 		// set the user commands for this frame
