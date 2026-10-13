@@ -8182,7 +8182,7 @@ void idPlayer::SpawnKart(int kartIndex) {
 	}
 
 	//lock player in kart 
-	static_cast<rvVehicle*> (kart)->Lock(); 
+	// static_cast<rvVehicle*> (kart)->Lock(); 
 }
 
 
@@ -9480,8 +9480,8 @@ void idPlayer::Think( void ) {
 	if ( IsInVehicle ( ) ) {	
 		vehicleController.SetInput ( usercmd, viewAngles );
 				
-		// ngc2 make sure karts are always in third person. 
-		pm_thirdPerson.SetBool( true ); 
+		// ngc2 make sure karts are always in third person, except when tab is clicked. 
+		pm_thirdPerson.SetBool( !objectiveSystemOpen ); 
 
 		// calculate the exact bobbed view position, which is used to
 		// position the view weapon, among other things
