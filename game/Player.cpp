@@ -8159,7 +8159,7 @@ idPlayer::SpawnKart  (ngc2)
 void idPlayer::SpawnKart(int kartIndex) {
 	//karts selection  - didnt realize there was only one usable vehicle (tank), and the walker is well.. a walker. 
 	// need to make custom cars.  . . ... 
-	static const char* kartDefs[] = { "vehicle_gev", "vehicle_gev", "vehicle_walker" };
+	static const char* kartDefs[] = { "vehicle_speeder", "vehicle_gev", "vehicle_walker" };
 	
 	//close the kart screen 
 	kartSelectOpen = false; 
