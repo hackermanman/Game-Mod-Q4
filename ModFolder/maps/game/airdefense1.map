@@ -4,6 +4,107 @@ Version 3
 "classname" "worldspawn"
 "call" "map_airdefense1::main"
 "script" "maps/airdefense.script"
+
+// ngc2 wall around track outer
+// primitive 0 south side (y = -8833)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -400 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8842 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -12305 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 8824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9136 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 1 north side (y = -7490)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -400 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -7499 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -12305 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7481 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9136 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 2 west side (x = 9145)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -400 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -9154 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7499 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9136 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 3 east side (x = 12296)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -400 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -12305 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7499 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 12287 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+
+// ngc2 inner wall around track
+// primitive 6665 south side (y = -8344)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -200 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8353 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -11684 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 8335 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9826 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 6666 north side (y = -7987)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -200 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -7996 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -11684 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7978 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9826 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 6667 west side (x = 9835)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -200 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8335 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -9844 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7996 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 9826 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+// primitive 6668 east side (x = 11675)
+{
+ brushDef3
+ {
+  ( 0 0 -1 100 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 0 1 -200 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 -1 0 -8335 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 1 0 0 -11684 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( 0 1 0 7996 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+  ( -1 0 0 11666 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/common_trims/walltrim1_1"
+ }
+}
+
 // primitive 0
 {
  brushDef3
@@ -179194,6 +179295,7 @@ Version 3
 "name" "func_group_2714"
 "model" "func_group_2714"
 "origin" "9863 -2336 48"
+
 // primitive 0
 {
  brushDef3
@@ -179279,6 +179381,7 @@ Version 3
   ( -0.0000001024 1 0 -16 ) ( ( 0.0312500112 0 305.5001220703 ) ( 0 0.0078125 0.875 ) ) "textures/common_trims/trim5_1"
  }
 }
+
 // primitive 7
 {
  patchDef2
@@ -179882,3 +179985,4 @@ Version 3
 "origin" "9012 -5533 0"
 "model" "models/mapobjects/strogg/airdefense/batchsizeobjects/pipethings.lwo"
 }
+
