@@ -9481,12 +9481,13 @@ void idPlayer::Think( void ) {
 
 	if ( IsInVehicle ( ) ) {	
 
-		//ngc2 use held kart item
-		if ((usercmd.buttons & BUTTON_ATTACK) && !(oldButtons & BUTTON_ATTACK)) {
-			gameLocal.Printf("used kart item %d\n", kartItem);
+		//ngc2 use held kart item, only wokrs while holding one item (at a time). click fire and use item.
+		if (kartItem == 0) {
+			usercmd.buttons &= ~BUTTON_ATTACK;
+		}
+		else if (usercmd.buttons & BUTTON_ATTACK) {
 			kartItem = 0; 
 		}
-
 		vehicleController.SetInput ( usercmd, viewAngles );
 				
 		// ngc2 make sure karts are always in third person, except when tab is clicked. 

@@ -514,8 +514,8 @@ void idPlayerView::SingleView( idUserInterface *hud, const renderView_t *view, i
 		return;
 	}
 
-	// draw screen blobs
-	if ( !pm_thirdPerson.GetBool() && !g_skipViewEffects.GetBool() ) {
+	// draw screen blobs - removed the check for third person - ngc2
+	if ( !g_skipViewEffects.GetBool() ) {
 		for ( int i = 0 ; i < MAX_SCREEN_BLOBS ; i++ ) {
 			screenBlob_t	*blob = &screenBlobs[i];
 			if ( blob->finishTime <= gameLocal.time ) {
@@ -572,7 +572,8 @@ void idPlayerView::SingleView( idUserInterface *hud, const renderView_t *view, i
 		// twhitaker: always draw objective system
 		if ( player->objectiveSystem ) {
 			player->objectiveSystem->Redraw( gameLocal.time );
-		}		
+		}
+
 		// RAVEN END
 	}
 
