@@ -1099,6 +1099,8 @@ idPlayer::idPlayer() {
 	buttonMask				= 0;
 	oldFlags				= 0;
 
+	kartItem = 0; 
+
 	lastHitTime				= 0;
 	lastSavingThrowTime		= 0;
 
@@ -9478,6 +9480,13 @@ void idPlayer::Think( void ) {
 	}
 
 	if ( IsInVehicle ( ) ) {	
+
+		//ngc2 use held kart item
+		if ((usercmd.buttons & BUTTON_ATTACK) && !(oldButtons & BUTTON_ATTACK)) {
+			gameLocal.Printf("used kart item %d\n", kartItem);
+			kartItem = 0; 
+		}
+
 		vehicleController.SetInput ( usercmd, viewAngles );
 				
 		// ngc2 make sure karts are always in third person, except when tab is clicked. 

@@ -179986,3 +179986,84 @@ Version 3
 "model" "models/mapobjects/strogg/airdefense/batchsizeobjects/pipethings.lwo"
 }
 
+
+// ngc2 ---- course obstacles ----
+
+// 1 boost pad
+{
+"classname" "race_boostpad"
+"name" "race_boostpad_1"
+"origin" "10857 -7721 196.5"
+"model" "models/mapobjects/multiplayer/acceleration_pad/acceleration_pad.lwo"
+"mins" "-64 -64 -150"
+"maxs" "64 64 48"
+}
+
+// 2 jump pad
+{
+"classname" "race_jumppad"
+"name" "race_jumppad_1"
+"origin" "10156 -7706 196.5"
+"model" "models/mapobjects/multiplayer/jump_pad/jump_pad.lwo"
+"mins" "-64 -64 -150"
+"maxs" "64 64 48"
+}
+
+// 3 spikes
+{
+"classname" "race_spikes"
+"name" "race_spikes_1"
+"origin" "9549 -8022 196.5"
+"model" "models/mapobjects/strogg/stroyent/dispersal/grate_new.lwo"
+"mins" "-64 -64 -150"
+"maxs" "64 64 48"
+}
+
+// 4 saw blade
+{
+"classname" "race_saw"
+"name" "race_saw_1"
+"origin" "9659 -8564 196.5"
+"model" "models/mapobjects/strogg/stroyent/gear/gear.lwo"
+"mins" "-48 -48 -150"
+"maxs" "48 48 64"
+}
+
+// 5 breakable box
+{
+"classname" "moveable_crate_exploding1"
+"name" "race_crate_1"
+"origin" "11920 -8254 197"
+}
+
+// item boxes 
+{
+"classname" "itembox"
+"name" "kartbox_1"
+"origin" "10544 -7908 197"
+}
+// item boxes 
+{
+"classname" "itembox"
+"name" "kartbox_2"
+"origin" "10544 -7822 197"
+}
+// item boxes 
+{
+"classname" "itembox"
+"name" "kartbox_3"
+"origin" "10544 -7722 197"
+}
+// item boxes 
+{
+"classname" "itembox"
+"name" "kartbox_4"
+"origin" "10544 -7622 197"
+}
+// item boxes 
+{
+"classname" "itembox"
+"name" "kartbox_5"
+"origin" "10544 -7522 197"
+}
+

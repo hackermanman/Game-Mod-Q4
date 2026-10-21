@@ -588,6 +588,16 @@ bool idItem::GiveToPlayer( idPlayer *player ) {
 		return false;
 	}
 
+	//ngc2 kart item box, give random item if not holding one. 
+	if (spawnArgs.GetBool("item_kartbox")) {
+		if (player->kartItem != 0) {
+			return false;
+		}
+		player->kartItem = 1 + gameLocal.random.RandomInt(10);
+		gameLocal.Printf("kart item box: got item %d\n", player->kartItem);
+		return true;
+	}
+
 	if ( spawnArgs.GetBool( "inv_carry" ) ) {
 		return player->GiveInventoryItem( &spawnArgs );
 	} 
@@ -725,12 +735,9 @@ bool idItem::Pickup( idPlayer *player ) {
 
 	bool no_respawn = spawnArgs.GetBool( "no_respawn" );
 
-	if ( !gameLocal.isMultiplayer ) {
+	// ngc2 only kart item boxes respawn
+	if (!spawnArgs.GetBool("item_kartbox")) {
 		respawn = 0.0f;
-	} else if ( gameLocal.mpGame.IsBuyingAllowedInTheCurrentGameMode() ) {
-		if ( givenToPlayer != -1 ) {
-			respawn = 0.0f;
-		}
 	}
 
 	if ( respawn && !dropped && !no_respawn ) {

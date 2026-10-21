@@ -301,6 +301,8 @@ public:
 	int						oldButtons;
 	int						oldFlags;
 
+	int kartItem; //ngc2 held item box, 0 = none
+
 	int						lastHitTime;			// last time projectile fired by player hit target
 	int						lastSavingThrowTime;	// for the "free miss" effect
 
