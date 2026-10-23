@@ -1296,6 +1296,9 @@ void rvVehicle::UpdateHUD ( int position, idUserInterface* gui ) {
 	gui->SetStateInt ( "vehicle_haz", hazardWarningTime != 0 );
 	gui->SetStateInt ( "vehicle_locked", IsLocked ( ) );
 	
+	//ngc2 show the kart item on the HUD
+	gui->SetStateInt("kart_item", gameLocal.GetLocalPlayer()->kartItem);
+
 	// Update position specific information	
 	positions[position].UpdateHUD ( gui );	
 }

@@ -33,7 +33,7 @@ entityDef vehicle_gev
 	"editor_usage"				"GEV."
 
 	"spawnclass"				"rvVehicleRigid"
-
+	
 	"model"						"vehicle_gev"
 	"clipmodel"					"models/vehicles/gev/clip.lwo"
 	"mins"						"-160 -100 0"
@@ -131,9 +131,20 @@ entityDef vehicle_gev_driver
 	"def_part_pitch"			"vehicle_gev_turret_pitch"
 	
 	"def_part_main"				"vehicle_gev_weapon_main"
-	"def_part_mgun"				"vehicle_gev_weapon_mgun"		
+//	"def_part_mgun"				"vehicle_gev_weapon_mgun"		
 //	"def_part_rocket"			"vehicle_gev_weapon_rocket"
 	
+	"def_part_item1"			"kart_item1"
+	"def_part_item2"			"kart_item2"
+	"def_part_item3"			"kart_item3"
+	"def_part_item4"			"kart_item4"
+	"def_part_item5"			"kart_item5"
+	"def_part_item6"			"kart_item6"
+	"def_part_item7"			"kart_item7"
+	"def_part_item8"			"kart_item8"
+	"def_part_item9"			"kart_item9"
+	"def_part_item10"			"kart_item10"
+
 	"def_part_light"			"vehicle_gev_light"
 		
 	"eyeJoint"					"eye"
@@ -608,3 +619,14 @@ entityDef damage_gev_collision
 {
 	"damage"					"1"
 }
+
+entityDef kart_item1  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_gev_main" }
+entityDef kart_item2  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_rocket" }
+entityDef kart_item3  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_rocket_homing" }
+entityDef kart_item4  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_grenade" }
+entityDef kart_item5  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_nail" }
+entityDef kart_item6  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_nail_seek" }
+entityDef kart_item7  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_dmg" }
+entityDef kart_item8  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_hyperblaster_bounce" }
+entityDef kart_item9  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_blaster_charged" }
+entityDef kart_item10 { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_gev_rocket" }

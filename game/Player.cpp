@@ -9485,8 +9485,11 @@ void idPlayer::Think( void ) {
 		if (kartItem == 0) {
 			usercmd.buttons &= ~BUTTON_ATTACK;
 		}
-		else if (usercmd.buttons & BUTTON_ATTACK) {
-			kartItem = 0; 
+		else {
+			vehicleController.GetVehicle()->GetPosition(vehicleController.GetPosition())->SelectWeapon(kartItem);
+			if (usercmd.buttons & BUTTON_ATTACK) {
+				kartItem = 0; 
+			}
 		}
 		vehicleController.SetInput ( usercmd, viewAngles );
 				
