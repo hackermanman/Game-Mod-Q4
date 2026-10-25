@@ -467,6 +467,15 @@ windowDef Desktop
 		font "fonts/lowpixel"
 		textalign 1
 	}
+
+	windowDef kartLap {
+		rect 20,20,200,40
+		visible 1
+		forecolor 1,1,1,1
+		text "gui::kart_lap"
+		textscale 0.5 
+		textalign 0
+	}
 	
 	windowDef p_rockets
 	{

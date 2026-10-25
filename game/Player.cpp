@@ -1099,7 +1099,12 @@ idPlayer::idPlayer() {
 	buttonMask				= 0;
 	oldFlags				= 0;
 
-	kartItem = 0; 
+	// init kart item var ngc2
+	kartItem = 0;
+
+	// init kart lap vars ngc2
+	kartLap = 1;
+	kartCheckpoint = 1; 
 
 	lastHitTime				= 0;
 	lastSavingThrowTime		= 0;
@@ -1123,6 +1128,9 @@ idPlayer::idPlayer() {
 	//ngc2 kart select variables cfg
 	kartSelectGUI = NULL;
 	kartSelectOpen = false; 
+
+	//ngc2 kart win var
+	racewinGUI = NULL;
 
 	lastDmgTime				= 0;
 	deathClearContentsTime	= 0;
@@ -3666,6 +3674,13 @@ void idPlayer::DrawHUD( idUserInterface *_hud ) {
 		kartSelectGUI->Redraw(gameLocal.time);
 		return;
 	}
+
+	//ngc23 race win screen stays up after race finish. 
+	if (racewinGUI) {
+		racewinGUI->Redraw(gameLocal.time);
+		return; 
+	}
+	
 
 	if ( objectiveSystemOpen ) {
 		if ( !GuiActive() ) {
@@ -9480,6 +9495,39 @@ void idPlayer::Think( void ) {
 	}
 
 	if ( IsInVehicle ( ) ) {	
+
+		// ngc2 lap system, each checkpoint drive in order. 
+		// each checkpoint will then check where all players are positioned to see place
+
+		idVec3 pos = vehicleController.GetVehicle()->GetPhysics()->GetOrigin();
+
+		// ngc2 line 1 / finish line (adds to lap) 
+		if (kartCheckpoint == 0 && pos.x > 11565 && pos.x < 11765 && pos.y < -7516 && pos.y > -7961) {
+			kartLap++;
+			gameLocal.Printf("lap %d\n", kartLap);
+			if (kartLap == 5) {
+				gameLocal.Printf("race finished.\n");
+				racewinGUI = uiManager->FindGui("guis/racewin.gui", true, false, true);
+			}
+			kartCheckpoint = 1;
+		}
+		// line 2
+		if (kartCheckpoint == 1 && pos.x > 9741 && pos.x < 9941 && pos.y < -7516 && pos.y > -7961) {
+			gameLocal.Printf("hit line 2\n");
+			kartCheckpoint = 2;
+		}
+
+		// line 3
+		if (kartCheckpoint == 2 && pos.x > 9741 && pos.x < 9941 && pos.y < -8369 && pos.y > -8807) {
+			gameLocal.Printf("hit line 3\n");
+			kartCheckpoint = 3;
+		}
+
+		// line 4
+		if (kartCheckpoint == 3 && pos.x > 11565 && pos.x < 11765 && pos.y < -8369 && pos.y > -8807) {
+			gameLocal.Printf("hit line 4\n");
+			kartCheckpoint = 0;
+		}
 
 		//ngc2 use held kart item, only wokrs while holding one item (at a time). click fire and use item.
 		if (kartItem == 0) {

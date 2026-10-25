@@ -302,6 +302,8 @@ public:
 	int						oldFlags;
 
 	int kartItem; //ngc2 held item box, 0 = none
+	int kartLap; // the current lap
+	int kartCheckpoint; // next checkpoint needed to hit
 
 	int						lastHitTime;			// last time projectile fired by player hit target
 	int						lastSavingThrowTime;	// for the "free miss" effect
@@ -348,6 +350,7 @@ public:
 
 	//ngc2 kart select 
 	idUserInterface* kartSelectGUI; // GUI for kart selection
+	idUserInterface* racewinGUI; // GUI for win 
 	bool kartSelectOpen;  // true if the kart select GUI is open
 	void SpawnKart(int kartIndex); // spawn the kart for the player
 

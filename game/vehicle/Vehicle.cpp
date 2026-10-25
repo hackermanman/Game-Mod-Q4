@@ -1299,6 +1299,9 @@ void rvVehicle::UpdateHUD ( int position, idUserInterface* gui ) {
 	//ngc2 show the kart item on the HUD
 	gui->SetStateInt("kart_item", gameLocal.GetLocalPlayer()->kartItem);
 
+	// ngc2 kart lap
+	gui->SetStateInt("kart_lap", gameLocal.GetLocalPlayer()->kartLap);
+
 	// Update position specific information	
 	positions[position].UpdateHUD ( gui );	
 }
