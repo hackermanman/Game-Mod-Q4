@@ -33,13 +33,14 @@ entityDef vehicle_speeder
 	"editor_usage"				"GEV."
 
 	"spawnclass"				"rvVehicleRigid"
-
+	
 	"model"						"vehicle_gev"
+	"skin"						"skins/speeder_blue"
 	"clipmodel"					"models/vehicles/gev/clip.lwo"
 	"mins"						"-160 -100 0"
 	"maxs"						"160 100 100"
 
-	"def_position_driver"		"speeder_driver"
+	"def_position_driver"		"vehicle_gev_driver"
 
 	"gui_hud"					"guis/vehicles/hud.gui"
 	"hudid"						"1"
@@ -47,7 +48,7 @@ entityDef vehicle_speeder
 	"mass"						"2500"
 	"team"						"0"
 	"density"					".0005"
-	"friction_linear"			".5"
+	"friction_linear"			"1"
 	"friction_contact"			".7"
 	"bouncyness"				".2"
 	"nav_active"				"1"
@@ -69,11 +70,11 @@ entityDef vehicle_speeder
 
 	//	trying some things out.		-mrenner
 
-	"health"					"100"
+	"health"					"300"
 	"healthRegenDelay"			"6"
-	"healthRegenRate"			"22"
+	"healthRegenRate"			"10"
 	
-	"shieldHealth"				"100"
+	"shieldHealth"				"500"
 	"shieldRegenDelay"			"6"
 	"shieldRegenTime"			"16"
 
@@ -120,20 +121,31 @@ entityDef vehicle_speeder
 //								Positions
 //------------------------------------------------------------------------------
 
-entityDef speeder_driver
+entityDef vehicle_gev_driver
 {
-	"def_part_hover_fl"			"speeder_hoverpad_fl"
-	"def_part_hover_bl"			"speeder_hoverpad_bl"
-	"def_part_hover_fr"			"speeder_hoverpad_fr"
-	"def_part_hover_br"			"speeder_hoverpad_br"
+	"def_part_hover_fl"			"vehicle_gev_hoverpad_fl"
+	"def_part_hover_bl"			"vehicle_gev_hoverpad_bl"
+	"def_part_hover_fr"			"vehicle_gev_hoverpad_fr"
+	"def_part_hover_br"			"vehicle_gev_hoverpad_br"
 				
 	"def_part_yaw"				"vehicle_gev_turret_yaw"
 	"def_part_pitch"			"vehicle_gev_turret_pitch"
 	
-	"def_part_main"				"speeder_weapon_main"
-	"def_part_mgun"				"vehicle_gev_weapon_mgun"		
+	"def_part_main"				"vehicle_gev_weapon_main"
+//	"def_part_mgun"				"vehicle_gev_weapon_mgun"		
 //	"def_part_rocket"			"vehicle_gev_weapon_rocket"
 	
+	"def_part_item1"			"kart_item1"
+	"def_part_item2"			"kart_item2"
+	"def_part_item3"			"kart_item3"
+	"def_part_item4"			"kart_item4"
+	"def_part_item5"			"kart_item5"
+	"def_part_item6"			"kart_item6"
+	"def_part_item7"			"kart_item7"
+	"def_part_item8"			"kart_item8"
+	"def_part_item9"			"kart_item9"
+	"def_part_item10"			"kart_item10"
+
 	"def_part_light"			"vehicle_gev_light"
 		
 	"eyeJoint"					"eye"
@@ -173,7 +185,7 @@ model vehicle_gev
 //									Parts
 //------------------------------------------------------------------------------
 
-entityDef speeder_hoverpad
+entityDef vehicle_gev_hoverpad
 {
 	"spawnclass"				"rvVehicleHoverpad"
 
@@ -191,7 +203,7 @@ entityDef speeder_hoverpad
 	"fx_dust"				"effects/vehicles/gev/dust.fx"
 	"fx_dust_rock"				"effects/vehicles/gev/dust_rock.fx"	
 
-	"snd_loop"					"speeder_hoverpad"
+	"snd_loop"					"vehicle_gev_hoverpad"
 	"volume"					"-20 -4"
 	"freqShift"					"1 1.2"
 	"fadetime"					"2"	
@@ -199,22 +211,22 @@ entityDef speeder_hoverpad
 	"mins"						"0 -.5 -.5"
 	"maxs"						"1 .5 .5"
 	
-	"thrustForward"				"220"
-	"thrustLeft"				"170"
+	"thrustForward"				"200"
+	"thrustLeft"				"200"
 }
 
-entityDef speeder_hoverpad_fl
+entityDef vehicle_gev_hoverpad_fl
 {
-	"inherit"					"speeder_hoverpad"
+	"inherit"					"vehicle_gev_hoverpad"
 	"offset"					"100 70 0"
 	"force"						"300"
 	"mins"						"0 -100 -70"
 	"maxs"						"1 50 30"
 }
 
-entityDef speeder_hoverpad_fr
+entityDef vehicle_gev_hoverpad_fr
 {
-	"inherit"					"speeder_hoverpad"
+	"inherit"					"vehicle_gev_hoverpad"
 	"offset"					"100 -70 0"
 	"force"						"300"
 
@@ -222,18 +234,18 @@ entityDef speeder_hoverpad_fr
 	"maxs"						"1 50 70"
 }
 
-entityDef speeder_hoverpad_bl
+entityDef vehicle_gev_hoverpad_bl
 {
-	"inherit"					"speeder_hoverpad"
+	"inherit"					"vehicle_gev_hoverpad"
 	"offset"					"-110 70 0"
 
 	"mins"						"0 -30 -70"
 	"maxs"						"1 110 30"
 }
 
-entityDef speeder_hoverpad_br
+entityDef vehicle_gev_hoverpad_br
 {
-	"inherit"					"speeder_hoverpad"
+	"inherit"					"vehicle_gev_hoverpad"
 	"offset"					"-110 -70 0"
 	
 	"mins"						"0 -30 -30"
@@ -272,7 +284,7 @@ entityDef vehicle_gev_turret_pitch
 	"volume"					"-10 6"
 }
 
-entityDef speeder_weapon_main
+entityDef vehicle_gev_weapon_main
 {
 	"spawnclass"				"rvVehicleWeapon"
 
@@ -608,3 +620,14 @@ entityDef damage_gev_collision
 {
 	"damage"					"1"
 }
+
+entityDef kart_item1  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_gev_main" }
+entityDef kart_item2  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_rocket" }
+entityDef kart_item3  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_rocket_homing" }
+entityDef kart_item4  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_grenade" }
+entityDef kart_item5  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_nail" }
+entityDef kart_item6  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_nail_seek" }
+entityDef kart_item7  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_dmg" }
+entityDef kart_item8  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_hyperblaster_bounce" }
+entityDef kart_item9  { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_blaster_charged" }
+entityDef kart_item10 { "inherit" "vehicle_gev_weapon_main" "def_projectile" "projectile_gev_rocket" }
