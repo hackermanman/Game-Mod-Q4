@@ -1,8 +1,0 @@
-skin skins/speeder_blue
-{
-    models/vehicles/hovertank/nht   models/vehicles/speeder/nht
-}
-skin skins/rustbucket_pink
-{
-    models/vehicles/hovertank/nht   models/vehicles/rustbucket/nht
-}

@@ -1,5 +1,0 @@
-//npc driver ngc2 
-
-entityDef kart_npc_driver {
-        "spawnclass"    "rvVehicleDriver"
-}
