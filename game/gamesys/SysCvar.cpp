@@ -215,7 +215,9 @@ idCVar g_debugVehicle(				"g_debugVehicle",			"0",			CVAR_GAME | CVAR_INTEGER, "
 // twhitaker: for rvVehicleDriver
 idCVar g_debugVehicleDriver(		"g_debugVehicleDriver",		"0",			CVAR_GAME | CVAR_INTEGER, "enables debug features for the func_vehicle_driver" );
 idCVar g_debugVehicleAI(			"g_debugVehicleAI",			"0",			CVAR_GAME | CVAR_INTEGER, "enables debug features for the vehicle ai system" );
-idCVar g_vehicleMode(				"g_vehicleMode",			"1",			CVAR_GAME | CVAR_INTEGER, "enables the new vehicle control system for the GEV." );
+
+//ngc2 replaced with old tank movement so NPC racer can rotate
+idCVar g_vehicleMode(				"g_vehicleMode",			"0",			CVAR_GAME | CVAR_INTEGER, "enables the new vehicle control system for the GEV." );
 // RAVEN END
 idCVar g_allowVehicleGunOverheat(	"g_allowVehicleGunOverheat","1",			CVAR_GAME | CVAR_BOOL, "allows disabling the gun overheating mechanism for vehicles that use it." );
 

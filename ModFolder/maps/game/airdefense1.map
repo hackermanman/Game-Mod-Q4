@@ -180072,3 +180072,67 @@ Version 3
 "origin" "10544 -7522 197"
 }
 
+// ngc2 npc racer
+// npc target points
+{
+"classname" "target_null"
+"name" "p1"
+"origin" "12000 -7720 197"
+"target" "p2"
+"min_distance" "400"
+}
+{
+"classname" "target_null"
+"name" "p2"
+"origin" "9529 -7724 197"
+"target" "p3"
+"min_distance" "400"
+}
+{
+"classname" "target_null"
+"name" "p3"
+"origin" "9497 -8607 197"
+"target" "p4"
+"min_distance" "400"
+}
+{
+"classname" "target_null"
+"name" "p4"
+"origin" "11980 -8600 197"
+"target" "p1"
+"min_distance" "400"
+}
+
+// npc kart 1 
+{
+"classname" "vehicle_gev"
+"name" "npc_kart1"
+"origin" "12028 -8500 197"
+"angle" "90"
+"health" "2500"
+}
+// npc driver
+{
+"classname" "kart_npc_driver"
+"name" "driver1"
+"origin" "12028 -8500 197"
+"target" "npc_kart1"
+"target1" "p1"
+}
+
+// npc kart 2
+{
+"classname" "vehicle_RB"
+"name" "npc_kart2"
+"origin" "12028 -8900 197"
+"angle" "90"
+"health" "2500"
+}
+// npc driver 2
+{
+"classname" "kart_npc_driver"
+"name" "driver2"
+"origin" "12028 -8900 197"
+"target" "npc_kart2"
+"target1" "p1"
+}
