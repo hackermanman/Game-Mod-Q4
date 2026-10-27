@@ -179989,78 +179989,83 @@ Version 3
 
 // ngc2 ---- course obstacles ----
 
-// 1 boost pad
+// boost pad
 {
-"classname" "race_boostpad"
+"classname" "boostpad"
 "name" "race_boostpad_1"
-"origin" "10857 -7721 196.5"
+"origin" "10857 -7721 130"
 "model" "models/mapobjects/multiplayer/acceleration_pad/acceleration_pad.lwo"
-"mins" "-64 -64 -150"
-"maxs" "64 64 48"
+"angle" "270"
 }
 
-// 2 jump pad
+// jump pad
 {
-"classname" "race_jumppad"
+"classname" "jumppad"
 "name" "race_jumppad_1"
-"origin" "10156 -7706 196.5"
+"origin" "10156 -7706 130"
 "model" "models/mapobjects/multiplayer/jump_pad/jump_pad.lwo"
-"mins" "-64 -64 -150"
-"maxs" "64 64 48"
 }
 
-// 3 spikes
+// spikes
 {
-"classname" "race_spikes"
+"classname" "spikes"
 "name" "race_spikes_1"
-"origin" "9549 -8022 196.5"
+"origin" "9300 -8022 125"
 "model" "models/mapobjects/strogg/stroyent/dispersal/grate_new.lwo"
-"mins" "-64 -64 -150"
-"maxs" "64 64 48"
+"angle" "90"
 }
 
-// 4 saw blade
+// 4 saw blade (just spins, saw damage does the daamage)
 {
-"classname" "race_saw"
+"classname" "saw"
 "name" "race_saw_1"
-"origin" "9659 -8564 196.5"
-"model" "models/mapobjects/strogg/stroyent/gear/gear.lwo"
-"mins" "-48 -48 -150"
-"maxs" "48 48 64"
+"origin" "9340 -8574 120"
+"model" "models/mapobjects/strogg/stroyent/gear/gear_med.lwo"
+"rotation" "0 0 1 0 1 0 -1 0 0"
+"speed" "300"
+"x_axis" "1"
+}
+// saw damage
+{
+"classname" "sawhurt"
+"name" "race_sawhurt_1"
+"origin" "9340 -8574 196.5"
 }
 
-// 5 breakable box
+// 5 box
 {
 "classname" "moveable_crate_exploding1"
 "name" "race_crate_1"
 "origin" "11920 -8254 197"
 }
 
-// item boxes 
+
+
+// ngc2 item boxes 
 {
 "classname" "itembox"
 "name" "kartbox_1"
 "origin" "10544 -7908 197"
 }
-// item boxes 
+
 {
 "classname" "itembox"
 "name" "kartbox_2"
 "origin" "10544 -7822 197"
 }
-// item boxes 
+
 {
 "classname" "itembox"
 "name" "kartbox_3"
 "origin" "10544 -7722 197"
 }
-// item boxes 
+
 {
 "classname" "itembox"
 "name" "kartbox_4"
 "origin" "10544 -7622 197"
 }
-// item boxes 
+
 {
 "classname" "itembox"
 "name" "kartbox_5"
