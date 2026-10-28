@@ -8199,7 +8199,7 @@ void idPlayer::SpawnKart(int kartIndex) {
 	}
 
 	//lock player in kart 
-	// static_cast<rvVehicle*> (kart)->Lock(); 
+	static_cast<rvVehicle*> (kart)->Lock(); 
 }
 
 
